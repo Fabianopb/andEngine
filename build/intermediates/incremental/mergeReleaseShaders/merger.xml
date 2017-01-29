@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/fabiano.brito/Dropbox/VisivaeMobile/Inferno/andEngine/src/main/shaders"/></dataSet><dataSet config="release"><source path="/Users/fabiano.brito/Dropbox/VisivaeMobile/Inferno/andEngine/src/release/shaders"/></dataSet></merger>
