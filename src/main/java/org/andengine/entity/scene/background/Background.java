@@ -3,6 +3,7 @@ package org.andengine.entity.scene.background;
 import org.andengine.engine.camera.Camera;
 import org.andengine.opengl.util.GLState;
 import org.andengine.util.adt.color.Color;
+import org.andengine.util.adt.color.ColorUtils;
 import org.andengine.util.modifier.IModifier;
 import org.andengine.util.modifier.ModifierList;
 
@@ -50,6 +51,10 @@ public class Background implements IBackground {
 
 	public Background(final Color pColor) {
 		this.mColor.set(pColor);
+	}
+
+	public Background(final int pARGBPackedInt) {
+		this.mColor.set(ColorUtils.convertARGBPackedIntToColor(pARGBPackedInt));
 	}
 
 	// ===========================================================
