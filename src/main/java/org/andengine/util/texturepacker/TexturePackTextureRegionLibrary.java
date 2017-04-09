@@ -3,6 +3,8 @@ package org.andengine.util.texturepacker;
 import java.util.HashMap;
 
 import android.util.SparseArray;
+import org.andengine.opengl.texture.region.ITiledTextureRegion;
+import org.andengine.opengl.texture.region.TiledTextureRegion;
 
 /**
  * (c) Zynga 2011
@@ -82,6 +84,17 @@ public class TexturePackTextureRegionLibrary {
 		} else {
 			return this.get(pSource);
 		}
+	}
+
+	public ITiledTextureRegion getTiled(int id, int columns, int rows) {
+	  TexturePackerTextureRegion localTexturePackTextureRegion = (TexturePackerTextureRegion)this.mIDMapping.get(id);
+	  return TiledTextureRegion.create(localTexturePackTextureRegion.getTexture(),
+	  	(int)localTexturePackTextureRegion.getTextureX(),
+	   	(int)localTexturePackTextureRegion.getTextureY(),
+	   	(int)localTexturePackTextureRegion.getWidth(),
+	   	(int)localTexturePackTextureRegion.getHeight(),
+	   	columns, rows, localTexturePackTextureRegion.isRotated()
+		);
 	}
 
 	private void throwOnCollision(final TexturePackerTextureRegion pTexturePackTextureRegion) throws IllegalArgumentException {
